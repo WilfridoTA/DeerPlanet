@@ -20,6 +20,8 @@ public class Enemy1Behivour : MonoBehaviour
     [SerializeField] AudioClip damageSfx;
     //Una variable para indicar el daño que se realizara al jugador
     [SerializeField] int damage = -30;
+    //Variable para indicar cuanto puntaje vamos a restar
+    [SerializeField] int notScore = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -111,7 +113,7 @@ public class Enemy1Behivour : MonoBehaviour
     }
 
 
-    //Reducir la vida del jugador cuando entre en contacto con el enemigo
+    //Reducir la vida del jugador y su puntaje cuando entre en contacto con el enemigo
     void OnTriggerEnter2D(Collider2D other)
     {
         //Comparamaos si entraron en contacto
@@ -121,6 +123,8 @@ public class Enemy1Behivour : MonoBehaviour
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(damageSfx);
             //Modiicamos la salud del jugador
             PlayerHealth.instance.ModifyHP(damage);
+            //Modificamos el puntaje del jugador
+            LevelManager.instance.IncreaseScore(notScore,0); //Solo modificaremos el puntaje (primer parametro)
         }
     }
 }

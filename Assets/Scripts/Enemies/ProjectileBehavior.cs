@@ -9,7 +9,8 @@ public class ProjectileBehavior : MonoBehaviour
     public float movementSpeed = 2.5f;
     public Animator animator;
     //Agregamos un efecto de sonido para indicar al jugador el daño recibido
-    [SerializeField] AudioClip damageSfx;
+    [SerializeField] AudioClip damagePlayerSfx;
+    [SerializeField] AudioClip damageWallSfx;
     //Una variable para indicar el daño que se realizara al jugador
     [SerializeField] int damage = -15;
 
@@ -41,7 +42,7 @@ public class ProjectileBehavior : MonoBehaviour
             //Indicamos el daño que recibiar el jugador
             PlayerHealth.instance.ModifyHP(damage);
             //Hacemos que suene el sonido de daño
-            other.gameObject.GetComponent<AudioSource>().PlayOneShot(damageSfx);
+            other.gameObject.GetComponent<AudioSource>().PlayOneShot(damagePlayerSfx);
 
             //Esto es un test para ver que impacta
             Debug.Log("Impacte al jugador");
@@ -59,7 +60,7 @@ public class ProjectileBehavior : MonoBehaviour
             Debug.Log("Impacte una pared");
 
             //Hacemos que suene el sonido de daño
-            other.gameObject.GetComponent<AudioSource>().PlayOneShot(damageSfx); //No eliminar audioSource
+            other.gameObject.GetComponent<AudioSource>().PlayOneShot(damageWallSfx); //No eliminar audioSource
 
 
             //Se ejecuta la siguiente animacion

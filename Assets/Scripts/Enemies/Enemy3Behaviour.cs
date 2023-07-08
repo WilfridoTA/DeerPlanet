@@ -21,6 +21,7 @@ public class Enemy3Behaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Asignamos variables
         animator = GetComponent<Animator>();
         target = GameObject.Find("Player");
     }

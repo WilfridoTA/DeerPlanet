@@ -24,6 +24,8 @@ public class Enemy2Behavior : MonoBehaviour
     [SerializeField] AudioClip damageSfx; //SE PUEDE REMPLZAR EL INICIO CON UN PUBLIC???
     //Una variable para indicar el daño que se realizara al jugador
     [SerializeField] int damage = -30;
+    //Para dañar al jugador
+    [SerializeField] int notScore = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -197,6 +199,8 @@ public class Enemy2Behavior : MonoBehaviour
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(damageSfx);
             //Modiicamos la salud del jugador
             PlayerHealth.instance.ModifyHP(damage);
+            //Modificamos el puntaje del jugador
+            LevelManager.instance.IncreaseScore(notScore, 0); //Solo modificaremos el puntaje (primer parametro)
         }
     }
 }

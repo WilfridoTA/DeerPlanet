@@ -49,7 +49,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   movementSpeed: 2
   animator: {fileID: 4359691687005431297}
-  damageSfx: {fileID: 8300000, guid: 4202d5387e31f434c815264f300058ed, type: 3}
+  damagePlayerSfx: {fileID: 8300000, guid: 4202d5387e31f434c815264f300058ed, type: 3}
+  damageWallSfx: {fileID: 8300000, guid: 01a6d1db1621dfd43be4ad9af7e037a2, type: 3}
   damage: -15
 --- !u!212 &4848943817419979476
 SpriteRenderer:
