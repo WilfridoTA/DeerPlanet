@@ -21,7 +21,7 @@ public class Enemy2Behavior : MonoBehaviour
     public GameObject player;
 
     //Agregamos un efecto de sonido para indicar al jugador el daño recibido
-    [SerializeField] AudioClip damageSfx; //SE PUEDE REMPLZAR EL INICIO CON UN PUBLIC???
+    [SerializeField] AudioClip damageSfx;
     //Una variable para indicar el daño que se realizara al jugador
     [SerializeField] int damage = -30;
     //Para dañar al jugador
